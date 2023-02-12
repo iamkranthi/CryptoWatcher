@@ -1,5 +1,7 @@
+import 'package:crypto_currency_price_tracker/constants/colors.dart';
 import 'package:crypto_currency_price_tracker/pages/homepage.dart';
 import 'package:crypto_currency_price_tracker/providers/market_provider.dart';
+import 'package:crypto_currency_price_tracker/providers/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -18,17 +20,23 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider<MarketProvider>(
           create: (context) => MarketProvider(),
-        )
-        //TODO Further providers
+        ),
+        ChangeNotifierProvider<Themeprovider>(
+          create: (context) => Themeprovider(),
+        ),
       ],
-      child: MaterialApp(
-          title: 'Crypto tracker',
-          debugShowCheckedModeBanner: false,
-          theme: ThemeData(
-            primarySwatch: Colors.blue,
-            useMaterial3: true,
-          ),
-          home: const Homepage()),
+      child: Consumer<Themeprovider>(
+        builder: (context, themeProvider, child) {
+          return MaterialApp(
+            title: 'Crypto tracker',
+            debugShowCheckedModeBanner: false,
+            themeMode: themeProvider.themeMode,
+            theme: AppColors.lightTheme,
+            darkTheme: AppColors.darkTheme,
+            home: const Homepage(),
+          );
+        },
+      ),
     );
   }
 }

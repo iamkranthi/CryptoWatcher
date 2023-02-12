@@ -2,6 +2,7 @@ import 'package:crypto_currency_price_tracker/helpers/helpers.dart';
 import 'package:crypto_currency_price_tracker/helpers/responsive.dart';
 import 'package:crypto_currency_price_tracker/models/crypto_currency.dart';
 import 'package:crypto_currency_price_tracker/providers/market_provider.dart';
+import 'package:crypto_currency_price_tracker/providers/theme_provider.dart';
 import 'package:crypto_currency_price_tracker/widgets/text.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -16,6 +17,8 @@ class Homepage extends StatefulWidget {
 class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
+    Themeprovider themeProvider =
+        Provider.of<Themeprovider>(context, listen: false);
     return Scaffold(
       body: SafeArea(
         child: LayoutBuilderWidget(
@@ -30,11 +33,24 @@ class _HomepageState extends State<Homepage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Headings(
-                    text: 'Crypto Watcher',
-                    fontsize: 24,
-                    fontWeight: FontWeight.w600,
-                    textScaleFactor: responsive.sp(4),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Headings(
+                        text: 'Crypto Watcher',
+                        fontsize: 24,
+                        fontWeight: FontWeight.w600,
+                        textScaleFactor: responsive.sp(4),
+                      ),
+                      IconButton(
+                        onPressed: () {
+                          themeProvider.toggleTheme();
+                        },
+                        icon: (themeProvider.themeMode == ThemeMode.dark)
+                            ? const Icon(Icons.dark_mode)
+                            : const Icon(Icons.light_mode),
+                      )
+                    ],
                   ),
                   verticalSpacer(8),
                   Headings(
@@ -77,6 +93,8 @@ class _HomepageState extends State<Homepage> {
                                     trailing: Column(
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceEvenly,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.end,
                                       children: [
                                         Headings(
                                           text:
