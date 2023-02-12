@@ -18,7 +18,7 @@ class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
     Themeprovider themeProvider =
-        Provider.of<Themeprovider>(context, listen: false);
+        Provider.of<Themeprovider>(context, listen: true);
     return Scaffold(
       body: SafeArea(
         child: LayoutBuilderWidget(

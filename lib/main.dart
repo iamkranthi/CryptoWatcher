@@ -1,17 +1,22 @@
 import 'package:crypto_currency_price_tracker/constants/colors.dart';
+import 'package:crypto_currency_price_tracker/models/local_storage.dart';
 import 'package:crypto_currency_price_tracker/pages/homepage.dart';
 import 'package:crypto_currency_price_tracker/providers/market_provider.dart';
 import 'package:crypto_currency_price_tracker/providers/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(const MyApp());
+  String currentTheme = await LocalStorage.getTheme() ?? "light";
+  runApp( MyApp(
+    theme: currentTheme,
+  ));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final String theme;
+  const MyApp({super.key, required this.theme});
 
   // This widget is the root of your application.
   @override
@@ -22,7 +27,7 @@ class MyApp extends StatelessWidget {
           create: (context) => MarketProvider(),
         ),
         ChangeNotifierProvider<Themeprovider>(
-          create: (context) => Themeprovider(),
+          create: (context) => Themeprovider(theme),
         ),
       ],
       child: Consumer<Themeprovider>(
