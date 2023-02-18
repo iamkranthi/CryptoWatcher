@@ -28,7 +28,7 @@ class _DetailsState extends State<Details> {
                 marketProvider.fetchCryptoById(widget.id);
 
             return RefreshIndicator(
-              onRefresh: ()async{
+              onRefresh: () async {
                 await marketProvider.fetchData();
               },
               child: ListView(
@@ -50,7 +50,24 @@ class _DetailsState extends State<Details> {
                               fontWeight: FontWeight.w500,
                             ),
                             horizontalSpacer(20),
-                            IconButton(onPressed: (){}, icon: const Icon(CupertinoIcons.location_circle))
+                            (currentCrypto.isFavorite == false)
+                                ? IconButton(
+                                    onPressed: () {
+                                      marketProvider.addFavorite(currentCrypto);
+                                    },
+                                    icon: const Icon(
+                                        CupertinoIcons.location_circle),
+                                  )
+                                : IconButton(
+                                    onPressed: () {
+                                      marketProvider
+                                          .removeFavorite(currentCrypto);
+                                    },
+                                    icon: const Icon(
+                                      CupertinoIcons.location_circle_fill,
+                                      color: AppColors.green,
+                                    ),
+                                  )
                           ],
                         ),
                       ),
