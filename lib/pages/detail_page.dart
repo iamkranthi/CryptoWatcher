@@ -3,6 +3,7 @@ import 'package:crypto_currency_price_tracker/helpers/helpers.dart';
 import 'package:crypto_currency_price_tracker/models/crypto_currency.dart';
 import 'package:crypto_currency_price_tracker/providers/market_provider.dart';
 import 'package:crypto_currency_price_tracker/widgets/text.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -48,6 +49,8 @@ class _DetailsState extends State<Details> {
                               fontsize: 26,
                               fontWeight: FontWeight.w500,
                             ),
+                            horizontalSpacer(20),
+                            IconButton(onPressed: (){}, icon: const Icon(CupertinoIcons.location_circle))
                           ],
                         ),
                       ),

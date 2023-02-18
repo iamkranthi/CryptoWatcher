@@ -60,7 +60,6 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
                       )
                     ],
                   ),
-                 
                   Headings(
                     text: "Welcome Back",
                     fontsize: 20,
@@ -75,19 +74,18 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
                         child: Text("Markets"),
                       ),
                       Tab(
-                        child: Text("Favrouites"),
+                        child: Text("Favorites"),
                       ),
                     ],
                   ),
                   Expanded(
                     child: TabBarView(
                       physics: const BouncingScrollPhysics(
-                        parent: AlwaysScrollableScrollPhysics()
-                      ),
+                          parent: AlwaysScrollableScrollPhysics()),
                       controller: viewController,
                       children: const [
                         Markets(),
-                        Favrouites(),
+                        Favorite(),
                       ],
                     ),
                   )

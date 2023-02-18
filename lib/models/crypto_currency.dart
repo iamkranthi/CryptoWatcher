@@ -13,12 +13,11 @@ class CryptoCurrency {
   double? circulatingSupply;
   double? ath;
   double? atl;
- 
+  bool isfavrouite = false;
   bool isFavorite = false;
 
   CryptoCurrency(
       {required this.id,
-     
       required this.symbol,
       required this.name,
       required this.image,
@@ -50,7 +49,6 @@ class CryptoCurrency {
       circulatingSupply: double.parse(map["circulating_supply"].toString()),
       ath: double.parse(map["ath"].toString()),
       atl: double.parse(map["atl"].toString()),
-      
     );
   }
 }
