@@ -1,7 +1,7 @@
-import 'package:crypto_currency_price_tracker/constants/colors.dart';
 import 'package:crypto_currency_price_tracker/helpers/helpers.dart';
 import 'package:crypto_currency_price_tracker/helpers/responsive.dart';
 import 'package:crypto_currency_price_tracker/models/crypto_currency.dart';
+import 'package:crypto_currency_price_tracker/pages/detail_page.dart';
 import 'package:crypto_currency_price_tracker/providers/market_provider.dart';
 import 'package:crypto_currency_price_tracker/providers/theme_provider.dart';
 import 'package:crypto_currency_price_tracker/widgets/text.dart';
@@ -61,8 +61,7 @@ class _HomepageState extends State<Homepage> {
                     textScaleFactor: responsive.sp(3),
                   ),
                   verticalSpacer(10),
-                  
-                  Expanded(
+                  Flexible(
                     child: Consumer<MarketProvider>(
                       builder: (context, marketProvider, child) {
                         if (marketProvider.isLoading == true) {
@@ -87,6 +86,15 @@ class _HomepageState extends State<Homepage> {
                                       vertical: PADDINGS.padding2,
                                       horizontal: PADDINGS.padding3),
                                   child: ListTile(
+                                      onTap: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                Details(id: currentCrypto.id!),
+                                          ),
+                                        );
+                                      },
                                       contentPadding:
                                           const EdgeInsets.symmetric(
                                               horizontal: 8),

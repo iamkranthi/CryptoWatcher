@@ -13,9 +13,25 @@ class CryptoCurrency {
   double? circulatingSupply;
   double? ath;
   double? atl;
+ 
   bool isFavorite = false;
 
-  CryptoCurrency({required this.id, required this.symbol, required this.name, required this.image, required this.currentPrice, required this.marketCap, required this.marketCapRank, required this.high24, required this.low24, required this.priceChange24, required this.priceChangePercentage24, required this.circulatingSupply, required this.ath, required this.atl});
+  CryptoCurrency(
+      {required this.id,
+     
+      required this.symbol,
+      required this.name,
+      required this.image,
+      required this.currentPrice,
+      required this.marketCap,
+      required this.marketCapRank,
+      required this.high24,
+      required this.low24,
+      required this.priceChange24,
+      required this.priceChangePercentage24,
+      required this.circulatingSupply,
+      required this.ath,
+      required this.atl});
 
   factory CryptoCurrency.fromJSON(Map<String, dynamic> map) {
     return CryptoCurrency(
@@ -29,10 +45,12 @@ class CryptoCurrency {
       high24: double.parse(map["high_24h"].toString()),
       low24: double.parse(map["low_24h"].toString()),
       priceChange24: double.parse(map["price_change_24h"].toString()),
-      priceChangePercentage24: double.parse(map["price_change_percentage_24h"].toString()),
+      priceChangePercentage24:
+          double.parse(map["price_change_percentage_24h"].toString()),
       circulatingSupply: double.parse(map["circulating_supply"].toString()),
       ath: double.parse(map["ath"].toString()),
-      atl: double.parse(map["atl"].toString())
+      atl: double.parse(map["atl"].toString()),
+      
     );
   }
 }

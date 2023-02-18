@@ -23,9 +23,12 @@ class MarketProvider with ChangeNotifier {
     isLoading = false;
     notifyListeners();
 
-    Timer(const Duration(seconds: 40), () {
-      fetchData();
-      
-    });
+
+  }
+
+  CryptoCurrency fetchCryptoById(String id) {
+    CryptoCurrency crypto =
+        markets.where((element) => element.id == id).toList()[0];
+    return crypto;
   }
 }
