@@ -1,5 +1,4 @@
 import 'package:crypto_currency_price_tracker/constants/colors.dart';
-import 'package:crypto_currency_price_tracker/helpers/helpers.dart';
 import 'package:crypto_currency_price_tracker/models/crypto_currency.dart';
 import 'package:crypto_currency_price_tracker/providers/market_provider.dart';
 import 'package:crypto_currency_price_tracker/widgets/crypto_cards.dart';
@@ -18,12 +17,17 @@ class Favorite extends StatelessWidget {
             .where((element) => element.isFavorite == true)
             .toList();
         if (favorites.isNotEmpty) {
-          return ListView.builder(
-            itemCount: favorites.length,
-            itemBuilder: (context, index) {
-              CryptoCurrency currentCrypto = favorites[index];
-              return CryptoCards(currentCrypto: currentCrypto);
+          return RefreshIndicator(
+            onRefresh: ()async{
+            await marketProvider.fetchData();
             },
+            child: ListView.builder(
+              itemCount: favorites.length,
+              itemBuilder: (context, index) {
+                CryptoCurrency currentCrypto = favorites[index];
+                return CryptoCards(currentCrypto: currentCrypto);
+              },
+            ),
           );
         } else {
           return const Center(

@@ -1,9 +1,6 @@
-import 'package:crypto_currency_price_tracker/helpers/helpers.dart';
 import 'package:crypto_currency_price_tracker/models/crypto_currency.dart';
-import 'package:crypto_currency_price_tracker/pages/detail_page.dart';
 import 'package:crypto_currency_price_tracker/providers/market_provider.dart';
 import 'package:crypto_currency_price_tracker/widgets/crypto_cards.dart';
-import 'package:crypto_currency_price_tracker/widgets/text.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

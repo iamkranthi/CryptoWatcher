@@ -12,6 +12,7 @@ class CryptoCards extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: unused_local_variable
     MarketProvider marketProvider =
         Provider.of<MarketProvider>(context, listen: true);
     return Card(
