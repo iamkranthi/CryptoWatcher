@@ -7,6 +7,7 @@ import 'package:flutter/cupertino.dart';
 
 class MarketProvider with ChangeNotifier {
   bool isLoading = true;
+  bool hasInternet = true;
   List<CryptoCurrency> markets = [];
   MarketProvider() {
     fetchData();
