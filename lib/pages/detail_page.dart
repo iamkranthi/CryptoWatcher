@@ -135,6 +135,38 @@ class _DetailsState extends State<Details> {
                                 color: AppColors.bluegrey,
                               ),
                             ),
+                            verticalSpacer(20),
+                            Card(
+                              margin: const EdgeInsets.symmetric(
+                                  horizontal: PADDINGS.padding4),
+                              child: SizedBox(
+                                height: 75,
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  children: [
+                                    const CircleAvatar(
+                                      radius: 25,
+                                      backgroundImage:
+                                          AssetImage("assets/images/dev.jpg"),
+                                    ),
+                                    Column(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: [
+                                         ElevatedButton.icon(onPressed: (){}, icon:const Icon(Icons.logo_dev), label: const Text("Kranthi")),
+                                        verticalSpacer(4),
+                                         Headings(
+                                          text: "Crafted with flutter".toUpperCase(),
+                                          fontsize: 12,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                        verticalSpacer(4),
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              ),
+                            )
                           ],
                         ),
                       ),
@@ -149,5 +181,3 @@ class _DetailsState extends State<Details> {
     );
   }
 }
-
-
