@@ -23,23 +23,40 @@ class Responsive {
 
 class LayoutBuilderWidget extends StatelessWidget {
   final Widget Function(BuildContext, Responsive) builder;
+  final double minWidth;
+  final double maxWidth;
+  final double minHeight;
+  final double maxHeight;
 
   const LayoutBuilderWidget({
-    super.key,
+    Key? key,
     required this.builder,
-  });
+    this.minWidth = 100,
+    this.maxWidth = double.infinity,
+    this.minHeight = 100,
+    this.maxHeight = double.infinity,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (BuildContext context, BoxConstraints constraints) {
-        return builder(
-          context,
-          Responsive(
-            context: context,
-          ),
-        );
-      },
+    return ConstrainedBox(
+      constraints: BoxConstraints(
+        minWidth: minWidth,
+        maxWidth: maxWidth,
+        minHeight: minHeight,
+        maxHeight: maxHeight,
+      ),
+      child: LayoutBuilder(
+        builder: (BuildContext context, BoxConstraints constraints) {
+          return builder(
+            context,
+            Responsive(
+              context: context,
+            ),
+          );
+        },
+      ),
     );
   }
 }
+

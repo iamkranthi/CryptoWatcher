@@ -30,6 +30,7 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
     return Scaffold(
       body: SafeArea(
         child: LayoutBuilderWidget(
+          
           builder: (BuildContext context, Responsive responsive) {
             return Container(
               padding: EdgeInsets.only(

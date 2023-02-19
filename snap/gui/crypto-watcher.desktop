@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0.5
+Name=Crypto Watcher
+Exec=crypto-watcher
+Comment=A utility for tracking cryptocurrency prices using Flutter
+Icon=${SNAP}/meta/gui/logo.png
+Terminal=false
+Type=Application
+Categories=Utility;Application;

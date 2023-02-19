@@ -3,6 +3,7 @@ import 'package:crypto_currency_price_tracker/models/crypto_currency.dart';
 import 'package:crypto_currency_price_tracker/providers/market_provider.dart';
 import 'package:crypto_currency_price_tracker/widgets/crypto_cards.dart';
 import 'package:crypto_currency_price_tracker/widgets/text.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -30,8 +31,14 @@ class Favorite extends StatelessWidget {
             ),
           );
         } else {
-          return const Center(
-            child:  Headings(text: "Favorites not added yet!", fontsize: 26, fontWeight: FontWeight.w400,color: AppColors.bluegrey,
+          return  Center(
+            child:  Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: const[
+                 Icon(CupertinoIcons.location_circle_fill, size: 25),
+                Headings(text: "Favorites not added yet!", fontsize: 26, fontWeight: FontWeight.w400,color: AppColors.bluegrey,
+                ),
+              ],
             ),
           );
         }

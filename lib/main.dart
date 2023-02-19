@@ -1,6 +1,6 @@
 import 'package:crypto_currency_price_tracker/constants/colors.dart';
 import 'package:crypto_currency_price_tracker/models/local_storage.dart';
-import 'package:crypto_currency_price_tracker/pages/homepage.dart';
+import 'package:crypto_currency_price_tracker/pages/onboarding.dart';
 import 'package:crypto_currency_price_tracker/providers/market_provider.dart';
 import 'package:crypto_currency_price_tracker/providers/theme_provider.dart';
 import 'package:flutter/material.dart';
@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
             themeMode: themeProvider.themeMode,
             theme: AppColors.lightTheme,
             darkTheme: AppColors.darkTheme,
-            home: const Homepage(),
+            home: const Onboarding(),
           );
         },
       ),

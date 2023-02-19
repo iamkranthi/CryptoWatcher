@@ -1,4 +1,5 @@
 import 'package:crypto_currency_price_tracker/models/crypto_currency.dart';
+import 'package:crypto_currency_price_tracker/pages/error_handling.dart';
 import 'package:crypto_currency_price_tracker/providers/market_provider.dart';
 import 'package:crypto_currency_price_tracker/widgets/crypto_cards.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +33,7 @@ class Markets extends StatelessWidget {
               ),
             );
           } else {
-            return const Text("Data not found");
+            return const ErrorHandling();
           }
         }
       },

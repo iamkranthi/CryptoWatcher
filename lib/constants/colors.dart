@@ -16,7 +16,6 @@ class AppColors {
       brightness: Brightness.dark,
       scaffoldBackgroundColor: darkBackground,
       primaryColor: sliverDark,
-      textTheme: const TextTheme(),
       iconTheme: const IconThemeData(color: whiteBackground));
 
   static final lightTheme = ThemeData(
