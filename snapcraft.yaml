@@ -14,13 +14,13 @@ slots:
   name: com.kranthi.crypto-watcher # adjust accordingly to your app name
 
 apps: 
- crypto-watcher: 
-   command: crypto-watcher 
-   extensions: [flutter-master]
+   crypto-watcher: 
+     command: crypto-watcher 
+     extensions: [flutter-master]
    plugs: 
      - network
      - desktop 
-  slots: 
+   slots: 
      - dbus-crypto-watcher
 parts: 
    crypto-watcher: 
