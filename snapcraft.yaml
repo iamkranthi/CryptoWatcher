@@ -17,11 +17,11 @@ apps:
    crypto-watcher: 
      command: crypto-watcher 
      extensions: [flutter-master]
-   plugs: 
-     - network
-     - desktop 
-   slots: 
-     - dbus-crypto-watcher
+     plugs: 
+       - network
+       - desktop 
+     slots: 
+       - dbus-crypto-watcher
 parts: 
    crypto-watcher: 
      source: . 
