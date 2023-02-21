@@ -1,9 +1,8 @@
 [Desktop Entry]
-Version=1.0.5
-Name=Crypto Watcher
+Name=crypto watcher
+Comment=app for monitoring cryptocurrency prices
 Exec=crypto-watcher
-Comment=A utility for tracking cryptocurrency prices using Flutter
-Icon=${SNAP}/meta/gui/logo.png
+Icon=${SNAP}/meta/gui/crypto-watcher.png
 Terminal=false
 Type=Application
-Categories=Utility;Application;
+Categories=Utility;

@@ -1,23 +1,29 @@
 name: crypto-watcher
-version: 1.0.5
+version: 0.1.0
 summary: A Flutter app for monitoring cryptocurrency prices
-description: Crypto Watcher is a Flutter app that allows you to monitor cryptocurrency prices
-  and receive notifications when prices reach certain thresholds.
+description: Crypto Watcher is a Flutter app that allows you to monitor cryptocurrency prices and receive notifications when prices reach certain thresholds.
+
 confinement: strict
 base: core18
 grade: stable
-icon: snap/gui/logo.png
 
-apps:
-  crypto-watcher:
-    command: crypto-watcher
-    extensions: [flutter-master]
-    plugs:
-      - network
-      - desktop
+slots: 
+  dbus-crypto-watcher: # adjust accordingly to your app name
+  interface: dbus 
+  bus: session 
+  name: com.kranthi.crypto-watcher # adjust accordingly to your app name
 
-parts:
-  crypto-watcher:
-    source: .
-    plugin: flutter
-    flutter-target: lib/main.dart # The main entry-point file of the application
+apps: 
+ crypto-watcher: 
+   command: crypto-watcher 
+   extensions: [flutter-master]
+   plugs: 
+     - network
+     - desktop 
+  slots: 
+     - dbus-crypto-watcher
+parts: 
+   crypto-watcher: 
+     source: . 
+     plugin: flutter 
+     flutter-target: lib/main.dart #The main entry-point file of the application 
