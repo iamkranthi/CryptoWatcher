@@ -31,15 +31,14 @@ class Favorite extends StatelessWidget {
             ),
           );
         } else {
-          return  Center(
-            child:  Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: const[
-                 Icon(CupertinoIcons.location_circle_fill, size: 25),
-                Headings(text: "Favorites not added yet!", fontsize: 26, fontWeight: FontWeight.w400,color: AppColors.bluegrey,
-                ),
-              ],
-            ),
+          return const Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+               Icon(CupertinoIcons.location_circle_fill, size: 25),
+              Headings(text: "Favorites not added yet!", fontsize: 26, fontWeight: FontWeight.w400,color: AppColors.bluegrey,
+              ),
+            ],
           );
         }
       },

@@ -8,14 +8,13 @@ base: core18
 grade: stable
 icon: snap/gui/logo.png
 
-
 apps:
-   crypto-watcher:
+  crypto-watcher:
     command: crypto-watcher
-     extensions: [flutter-master]
-     plugs:
-       - network
-       - desktop
+    extensions: [flutter-master]
+    plugs:
+      - network
+      - desktop
 
 parts:
   crypto-watcher:
