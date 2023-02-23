@@ -8,22 +8,24 @@ base: core18
 grade: stable
 
 slots: 
-  dbus-crypto-watcher: # adjust accordingly to your app name
-  interface: dbus 
-  bus: session 
-  name: com.kranthi.crypto-watcher # adjust accordingly to your app name
+  dbus-crypto-watcher: 
+    interface: dbus
+    bus: session
+    name: com.kranthi.crypto-watcher
 
 apps: 
-   crypto-watcher: 
-     command: crypto-watcher 
-     extensions: [flutter-master]
-     plugs: 
-       - network
-       - desktop 
-     slots: 
-       - dbus-crypto-watcher
+  crypto-watcher: 
+    command: crypto_watcher 
+    extensions: [flutter-master]
+    plugs: 
+      - network
+    slots: 
+      - dbus-crypto-watcher
+    environment:
+      DBUS_SESSION_BUS_ADDRESS: $DBUS_SESSION_BUS_ADDRESS
+
 parts: 
-   crypto-watcher: 
-     source: . 
-     plugin: flutter 
-     flutter-target: lib/main.dart #The main entry-point file of the application 
+  crypto-watcher: 
+    source: . 
+    plugin: flutter 
+    flutter-target: lib/main.dart

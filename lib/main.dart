@@ -44,7 +44,7 @@ class MyApp extends StatelessWidget {
             themeMode: themeProvider.themeMode,
             theme: AppColors.lightTheme,
             darkTheme: AppColors.darkTheme,
-            home:  hasCompletedOnboarding ? const Homepage() : const Onboarding(),
+            home:   const Onboarding(),
           );
         },
       ),
