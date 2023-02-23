@@ -19,8 +19,6 @@ CryptoWatcher is a cross platform application built using Flutter and Dart progr
 
 ## Screenshots
 
-## Screenshots
-
 <div style="display:flex;flex-wrap:wrap">
   <img src="https://user-images.githubusercontent.com/75005151/220852904-e954414f-46ef-43ba-84c4-86e663b31b3e.png" width="38%" />
   <img src="https://user-images.githubusercontent.com/75005151/220852922-4f5bf7f0-2206-47ed-aa22-f4557f221079.png" width="38%" />
