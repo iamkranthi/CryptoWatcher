@@ -4,7 +4,7 @@
 
 # Crypto Watcher
 
-CryptoWatcher is a mobile application built using Flutter and Dart programming languages that allows users to monitor and analyze cryptocurrency data. The app utilizes the CoinGecko API to fetch the data and shared preferences to store it locally, providing users with quick and easy access to market trends and insights.
+CryptoWatcher is a cross platform application built using Flutter and Dart programming languages that allows users to monitor and analyze cryptocurrency data. The app utilizes the CoinGecko API to fetch the data and shared preferences to store it locally, providing users with quick and easy access to market trends and insights.
 
 
 
