@@ -30,7 +30,13 @@ CryptoWatcher is a cross platform application built using Flutter and Dart progr
 
 ## Installation
 - CryptoWatcher is available for Linux users to download and install via Snapcraft.
- - To install via Snapcraft visit [CryptoWatcher](https://snapcraft.io/crypto-watcher) 
+ - To install via Snapcraft 
+
+<a href="https://snapcraft.io/crypto-watcher">
+  <img alt="Get it from the Snap Store" src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" />
+</a>
+
+
 - To install the application, using a terminal and enter the following command:
 ```bash
   sudo snap install crypto-watcher
